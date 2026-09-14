@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANT COLONY - Sayım Ailesine Katıl</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #121824; color: #f1f5f9; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .container { width: 100%; max-width: 480px; background: #1e293b; padding: 30px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); border: 1px solid #334155; }
+        
+        .header { text-align: center; margin-bottom: 25px; }
+        .header h1 { color: #f59e0b; font-size: 26px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+        .header p { color: #94a3b8; font-size: 14px; line-height: 1.4; }
+
+        /* Gamification Banner */
+        .promo-banner { background: linear-gradient(135deg, #b45309, #d97706); color: #fff; padding: 15px; border-radius: 12px; text-align: center; margin-bottom: 25px; box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3); }
+        .promo-banner h2 { font-size: 18px; margin-bottom: 5px; font-weight: 700; }
+        .promo-banner p { font-size: 13px; opacity: 0.95; }
+
+        /* Form Elements */
+        .form-group { margin-bottom: 15px; }
+        label { display: block; font-size: 13px; color: #cbd5e1; margin-bottom: 6px; font-weight: 500; }
+        input { width: 100%; padding: 12px 15px; background: #0f172a; border: 1px solid #475569; border-radius: 8px; color: #fff; font-size: 15px; transition: border-color 0.2s; }
+        input:focus { outline: none; border-color: #f59e0b; }
+
+        .btn-submit { width: 100%; background: #f59e0b; color: #0f172a; font-weight: 700; padding: 14px; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; transition: background 0.2s, transform 0.1s; margin-top: 10px; text-transform: uppercase; }
+        .btn-submit:hover { background: #d97706; transform: translateY(-1px); }
+
+        .footer-note { text-align: center; margin-top: 20px; font-size: 12px; color: #64748b; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>🐜 ANT COLONY</h1>
+            <p>Profesyonel Envanter ve Sayım Ekibine Dahil Ol</p>
+        </div>
+
+        <!-- Oyunsallaştırma / Karşılama Kartı -->
+        <div class="promo-banner">
+            <h2>🎁 1.000 ANT Puan Hediyen Hazır!</h2>
+            <p>Hemen kayıt ol; rütbeni yükselt, görevleri tamamla, puanları topla ve kazancını katla!</p>
+        </div>
+
+        <!-- Başvuru ve Kayıt Formu -->
+        <form id="agentForm" onsubmit="handleRegistration(event)">
+            <div class="form-group">
+                <label>Ad Soyad</label>
+                <input type="text" id="fullname" placeholder="Adınızı ve soyadınızı girin" required>
+            </div>
+
+            <div class="form-group">
+                <label>T.C. Kimlik Numarası (Ödemeler İçin)</label>
+                <input type="text" id="tckn" maxlength="11" placeholder="11 haneli T.C. kimlik numaranız" required>
+            </div>
+
+            <div class="form-group">
+                <label>Doğum Tarihi</label>
+                <input type="date" id="birthdate" required>
+            </div>
+
+            <div class="form-group">
+                <label>IBAN Numarası (Yevmiye Yatacak Hesap)</label>
+                <input type="text" id="iban" placeholder="TR00 0000 0000 0000 0000 0000 00" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Koloniye Katıl ve Başvur</button>
+        </form>
+
+        <div class="footer-note">
+            ANT STOK SAYIM &copy; 2026 - Tüm Hakları Saklıdır.
+        </div>
+    </div>
+
+    <script>
+        function handleRegistration(e) {
+            e.preventDefault();
+            const name = document.getElementById('fullname').value;
+            alert(`Tebrikler ${name}! Koloniye katıldın ve 1.000 ANT Puan hesabına tanımlandı.`);
+        }
+    </script>
+
+</body>
+</html>
